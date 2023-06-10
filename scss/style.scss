@@ -1,0 +1,54 @@
+.default-btn {
+    width: fit-content;
+    padding: 12px 32px 13px;
+    border-radius: 4px;
+    background-color: #2fbeff;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+}
+
+// .default-btn.white-btn {
+//     background-color: #fff;
+// }
+
+// .default-btn.white-btn span {
+//     color: #2fbeff;
+// }
+
+// @media screen and (min-width: 993px) {
+//     .default-btn.white-btn:before {
+//         background-image: unset;
+//     }
+
+//     .default-btn.white-btn:hover:before {
+//         background-image: unset;
+//         background-color: rgba(0, 0, 0, 0.1);
+//     }
+// }
+
+
+
+.default-btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(204deg, #2fbeff, #1b70b6);
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+    border-radius: inherit;
+}
+
+.default-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.default-btn:hover:before {
+    opacity: 1;
+}

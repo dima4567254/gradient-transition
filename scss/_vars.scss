@@ -1,0 +1,63 @@
+/*$Butler: 'Butler',
+sans-serif;*/
+
+
+$orange: #FF9900;
+$active: #fb0909;
+$ac: #fcd7b6;
+$green:#14B4BE;
+$white: #FFFFFF;
+$black: #000000;
+$title: #436372;
+
+
+/*$ac: #fcd7b6;
+
+/*accent*/
+/*
+$antique:#fde7d3;
+$default: #243f4d;
+$title: #436372;
+$Cream: #feefe2;
+$Crayola: #c2d2db;
+$red: #e72828;
+$red1 :#fe3e57;
+$orange: #ffa500;
+
+$active: #fb0909;
+$ac: #fcd7b6;
+$green:#14B4BE;
+*/
+
+@mixin line-clamp-box($line-clamp, ) {
+    display: -webkit-box;
+    -webkit-line-clamp: $line-clamp;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin line-clamp-inline($line-clamp, ) {
+    display: -webkit-inline-flex;
+    -webkit-line-clamp: $line-clamp;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin line-height($font-size, $line-height, ) {
+    line-height: ($line-height / $font-size)
+}
+
+
+@mixin clamp($font-size,
+    $line-height,
+    $lines-to-show) {
+    // display: block; // Fallback for non-webkit browsers
+    display: -webkit-box;
+    font-size: rem($font-size);
+    max-height: rem(($font-size * $line-height * $lines-to-show)); // Fallback for non-webkit browsers
+    line-height: $line-height;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines-to-show;
+}
